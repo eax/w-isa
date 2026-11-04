@@ -1,0 +1,16 @@
+{
+  "site": {
+    "module": "model.layers.9.mlp.down_proj",
+    "location": "input",
+    "pooling": "last"
+  },
+  "positive_count": 5,
+  "negative_count": 5,
+  "feature_count": 1536,
+  "dtype": "torch.float64",
+  "model_revision": "b5f4b394abe60fe0e4d666139e57bfce520302a9",
+  "model_id": "HuggingFaceTB/SmolLM-135M-Instruct",
+  "prompt_sha256": "55e843f0d40f6fb5b57f62deb1a78cc3e5d7df34f719b22f23e5939ccfbc37e0",
+  "direction_sha256": "c757db9f920302d6970a3ebfd404b5386b3e3e75785c818df3514ddd7d4a10f1",
+  "direction_norm": 0.2804317522663304
+}

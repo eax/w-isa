@@ -1,0 +1,477 @@
+{
+  "model": "HuggingFaceTB/SmolLM-135M-Instruct",
+  "revision": "b5f4b394abe60fe0e4d666139e57bfce520302a9",
+  "site": {
+    "module": "model.layers.9.mlp.down_proj",
+    "location": "input",
+    "pooling": "last"
+  },
+  "profile": {
+    "site": {
+      "module": "model.layers.9.mlp.down_proj",
+      "location": "input",
+      "pooling": "last"
+    },
+    "positive_count": 5,
+    "negative_count": 5,
+    "feature_count": 1536,
+    "dtype": "torch.float64",
+    "model_revision": "b5f4b394abe60fe0e4d666139e57bfce520302a9",
+    "model_id": "HuggingFaceTB/SmolLM-135M-Instruct",
+    "prompt_sha256": "55e843f0d40f6fb5b57f62deb1a78cc3e5d7df34f719b22f23e5939ccfbc37e0",
+    "direction_sha256": "c757db9f920302d6970a3ebfd404b5386b3e3e75785c818df3514ddd7d4a10f1",
+    "direction_norm": 0.2804317522663304
+  },
+  "fixture_sha256": "a7f04ec6532940e7f66a13593fbf5746b98a09c875218ec96038a1535b107c32",
+  "fixture": "examples/style_pairs.json",
+  "calibration": {
+    "threshold": -0.018948859620056394,
+    "true_positive": 5,
+    "false_positive": 0,
+    "false_negative": 0,
+    "true_negative": 5,
+    "tpr": 1.0,
+    "fpr": 0.0,
+    "balanced_accuracy": 1.0
+  },
+  "heldout_trigger": {
+    "threshold": -0.018948859620056394,
+    "true_positive": 4,
+    "false_positive": 0,
+    "false_negative": 2,
+    "true_negative": 6,
+    "tpr": 0.6666666666666666,
+    "fpr": 0.0,
+    "balanced_accuracy": 0.8333333333333333
+  },
+  "calibration_scores": [
+    {
+      "prompt": "Answer in a formal professional style. Remind someone about an appointment on Friday.",
+      "positive": true,
+      "score": -0.003966381228381191
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Remind someone about an appointment on Friday.",
+      "positive": false,
+      "score": -0.07987740743098988
+    },
+    {
+      "prompt": "Answer in a formal professional style. Suggest working together on a project.",
+      "positive": true,
+      "score": 0.02600821363164086
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Suggest working together on a project.",
+      "positive": false,
+      "score": -0.050158958089971326
+    },
+    {
+      "prompt": "Answer in a formal professional style. Welcome a new colleague to the team.",
+      "positive": true,
+      "score": 0.0036475889227156368
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Welcome a new colleague to the team.",
+      "positive": false,
+      "score": -0.06250627646120156
+    },
+    {
+      "prompt": "Answer in a formal professional style. Ask someone for feedback on your presentation.",
+      "positive": true,
+      "score": 0.0414551741420026
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Ask someone for feedback on your presentation.",
+      "positive": false,
+      "score": -0.018948859620056394
+    },
+    {
+      "prompt": "Answer in a formal professional style. Apologize for missing a phone call.",
+      "positive": true,
+      "score": -0.012654267233923468
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Apologize for missing a phone call.",
+      "positive": false,
+      "score": -0.09024761370998459
+    }
+  ],
+  "heldout_scores": [
+    {
+      "prompt": "Answer in a formal professional style. Ask to reschedule a job interview.",
+      "positive": true,
+      "score": 0.015969817901178768
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Ask to reschedule a job interview.",
+      "positive": false,
+      "score": -0.061325822428425596
+    },
+    {
+      "prompt": "Answer in a formal professional style. Acknowledge receipt of a software bug report.",
+      "positive": true,
+      "score": 0.023232452790016227
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Acknowledge receipt of a software bug report.",
+      "positive": false,
+      "score": -0.05498560589553783
+    },
+    {
+      "prompt": "Answer in a formal professional style. Request a copy of an invoice.",
+      "positive": true,
+      "score": -0.0057245829161572444
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Request a copy of an invoice.",
+      "positive": false,
+      "score": -0.09016528469151128
+    },
+    {
+      "prompt": "Answer in a formal professional style. Congratulate a colleague on a promotion.",
+      "positive": true,
+      "score": -0.02112314808413039
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Congratulate a colleague on a promotion.",
+      "positive": false,
+      "score": -0.10048072239226288
+    },
+    {
+      "prompt": "Answer in a formal professional style. Ask a customer to confirm their address.",
+      "positive": true,
+      "score": -0.015053023054582726
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Ask a customer to confirm their address.",
+      "positive": false,
+      "score": -0.08594579321039825
+    },
+    {
+      "prompt": "Answer in a formal professional style. Confirm a restaurant reservation for two people.",
+      "positive": true,
+      "score": -0.03606523885213622
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Confirm a restaurant reservation for two people.",
+      "positive": false,
+      "score": -0.11323306138512207
+    }
+  ],
+  "baseline": [
+    {
+      "prompt": "Answer in a formal professional style. Ask to reschedule a job interview.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -2.4602291584014893,
+      "casual_completion_mean_logprob": -3.684208393096924,
+      "formal_preference_margin": 1.2239792346954346,
+      "generation": "Here is a formal professional style guide for a job interview:\n\n**Introduction**\n\n* Welcome to the interview!\n* Thank you for coming in today.\n* I'm excited to discuss your qualifications and fit for the role"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Ask to reschedule a job interview.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -2.6212785243988037,
+      "casual_completion_mean_logprob": -3.5575664043426514,
+      "formal_preference_margin": 0.9362878799438477,
+      "generation": "Here's an example of a casual friendly job interview:\n\n**Job Title:** Marketing Manager\n\n**Job Summary:**\n\nWe're seeking a highly motivated and detail-oriented Marketing Manager to join our team. The ideal candidate will"
+    },
+    {
+      "prompt": "Answer in a formal professional style. Acknowledge receipt of a software bug report.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -3.2260961532592773,
+      "casual_completion_mean_logprob": -3.9766359329223633,
+      "formal_preference_margin": 0.7505397796630859,
+      "generation": "Here is a formal professional style for a software bug report:\n\n**Date:** [Date]\n\n**Date:** [Date]\n\n**Date:** [Date]\n\n**Date:** [Date]\n\n**Date"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Acknowledge receipt of a software bug report.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -3.2127509117126465,
+      "casual_completion_mean_logprob": -3.79813814163208,
+      "formal_preference_margin": 0.5853872299194336,
+      "generation": "Here's an example of how to respond to a software bug report:\n\n**Initial Response**\n\n\"Hello! I'm [Your Name], a software engineer at [Your Company]. I'm here to report a software bug that"
+    },
+    {
+      "prompt": "Answer in a formal professional style. Request a copy of an invoice.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -2.9495882987976074,
+      "casual_completion_mean_logprob": -1.67971932888031,
+      "formal_preference_margin": -1.2698689699172974,
+      "generation": "Here is a formal request for a copy of an invoice:\n\n**Form A-1: Invoice**\n\n**Date:** [Insert Date]\n\n**Signature:** ______________________________________________________\n**Date:** [Insert Date"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Request a copy of an invoice.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -2.7371346950531006,
+      "casual_completion_mean_logprob": -1.4884592294692993,
+      "formal_preference_margin": -1.2486754655838013,
+      "generation": "Here's a sample response:\n\n**Introduction**\n\nI'm excited to share my recent purchase with you. I've been eyeing your receipt for a while now, and I wanted to take a moment to thank you for your"
+    },
+    {
+      "prompt": "Answer in a formal professional style. Congratulate a colleague on a promotion.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -1.8760141134262085,
+      "casual_completion_mean_logprob": -2.406094551086426,
+      "formal_preference_margin": 0.5300804376602173,
+      "generation": "Here is a formal professional style response:\n\n**Title:** Congratulations on your promotion!\n\n**Introduction:**\nThank you for your hard work and dedication. I am honored to have been part of your team and to be a part"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Congratulate a colleague on a promotion.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -1.9505500793457031,
+      "casual_completion_mean_logprob": -2.1505610942840576,
+      "formal_preference_margin": 0.2000110149383545,
+      "generation": "Here's a casual friendly way to congratulate a colleague on a promotion:\n\n**Greeting and Introduction**\n\n\"Good morning/afternoon everyone, and welcome to today's meeting! I'm so glad we could finally"
+    },
+    {
+      "prompt": "Answer in a formal professional style. Ask a customer to confirm their address.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -3.5378386974334717,
+      "casual_completion_mean_logprob": -3.2235608100891113,
+      "formal_preference_margin": -0.31427788734436035,
+      "generation": "Here is a formal professional style guide on how to ask for a customer's address:\n\n**General Guidelines**\n\n* Use a formal greeting, such as \"Hello, my name is [Your Name].\"\n* Address the"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Ask a customer to confirm their address.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -3.496953010559082,
+      "casual_completion_mean_logprob": -3.0605368614196777,
+      "formal_preference_margin": -0.4364161491394043,
+      "generation": "Here's an example of a casual friendly customer asking a customer to confirm their address:\n\n**Customer:** Hi, I'm looking for a new laptop. Can you tell me my address?\n\n**Customer:** Yes, I'm"
+    },
+    {
+      "prompt": "Answer in a formal professional style. Confirm a restaurant reservation for two people.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -2.0268402099609375,
+      "casual_completion_mean_logprob": -3.817702293395996,
+      "formal_preference_margin": 1.7908620834350586,
+      "generation": "Here is a formal professional style guide on how to confirm a restaurant reservation for two people:\n\n**Confirmation Process**\n\n**Step 1: Verify the Restaurant's Information**\n\n* Check the restaurant's website"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Confirm a restaurant reservation for two people.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -2.26208233833313,
+      "casual_completion_mean_logprob": -3.671654224395752,
+      "formal_preference_margin": 1.409571886062622,
+      "generation": "Here's a casual friendly way to confirm a restaurant reservation for two people:\n\n**Step 1: Check the Restaurant's Website**\n\n* Go to the restaurant's website ([www.yourwebsite.com](http://"
+    }
+  ],
+  "projected": [
+    {
+      "prompt": "Answer in a formal professional style. Ask to reschedule a job interview.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -2.450021982192993,
+      "casual_completion_mean_logprob": -3.6873605251312256,
+      "formal_preference_margin": 1.2373385429382324,
+      "generation": "Here is a formal professional style guide for a job interview:\n\n**Introduction**\n\n* Welcome to the interview!\n* Thank you for coming in today.\n* I'm excited to discuss your qualifications and fit for the role"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Ask to reschedule a job interview.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -2.606497049331665,
+      "casual_completion_mean_logprob": -3.5484931468963623,
+      "formal_preference_margin": 0.9419960975646973,
+      "generation": "Here's a casual friendly answer to your question:\n\n**Job Interview:**\n\n\"Hi, I'm looking for a new job at [Company Name]. Can you tell me a little bit about your experience with [specific company"
+    },
+    {
+      "prompt": "Answer in a formal professional style. Acknowledge receipt of a software bug report.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -3.231999397277832,
+      "casual_completion_mean_logprob": -3.9896693229675293,
+      "formal_preference_margin": 0.7576699256896973,
+      "generation": "Here is a formal professional style for a software bug report:\n\n**Date:** [Date]\n\n**Date:** [Date]\n\n**Date:** [Date]\n\n**Date:** [Date]\n\n**Date"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Acknowledge receipt of a software bug report.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -3.225029230117798,
+      "casual_completion_mean_logprob": -3.8021368980407715,
+      "formal_preference_margin": 0.5771076679229736,
+      "generation": "A software bug report is a document that outlines the findings and results of a software testing or debugging process. It typically includes information about the bug, its impact, and any relevant documentation or references. Here's a casual friendly style answer to help"
+    },
+    {
+      "prompt": "Answer in a formal professional style. Request a copy of an invoice.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -2.948758602142334,
+      "casual_completion_mean_logprob": -1.6794450283050537,
+      "formal_preference_margin": -1.2693135738372803,
+      "generation": "Here is a formal request for a copy of an invoice:\n\n**Form A-1: Invoice**\n\n**Date:** [Insert Date]\n\n**Signature:** ______________________________________________________\n**Date:** [Insert Date"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Request a copy of an invoice.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -2.740635871887207,
+      "casual_completion_mean_logprob": -1.4823070764541626,
+      "formal_preference_margin": -1.2583287954330444,
+      "generation": "Here's a sample response:\n\n**Introduction**\n\nI'm excited to share my recent purchase with you. I've been eyeing your receipt for a while now, and I wanted to take a moment to thank you for your"
+    },
+    {
+      "prompt": "Answer in a formal professional style. Congratulate a colleague on a promotion.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -1.8661315441131592,
+      "casual_completion_mean_logprob": -2.3868210315704346,
+      "formal_preference_margin": 0.5206894874572754,
+      "generation": "Here is a formal professional style response:\n\n**Title:** Congratulations on your promotion!\n\n**Introduction:**\nThank you for your hard work and dedication. I am honored to have been part of your team and to be a part"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Congratulate a colleague on a promotion.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -1.948029637336731,
+      "casual_completion_mean_logprob": -2.1348018646240234,
+      "formal_preference_margin": 0.18677222728729248,
+      "generation": "Here's a casual friendly way to congratulate a colleague on a promotion:\n\n**Greeting and Introduction**\n\n\"Good morning/afternoon everyone, and welcome to today's promotion! I'm so glad we're here"
+    },
+    {
+      "prompt": "Answer in a formal professional style. Ask a customer to confirm their address.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -3.5365960597991943,
+      "casual_completion_mean_logprob": -3.2287075519561768,
+      "formal_preference_margin": -0.3078885078430176,
+      "generation": "Here is a formal professional style guide on how to ask for a customer's address:\n\n**General Guidelines**\n\n* Use a formal greeting, such as \"Hello, my name is [Your Name].\"\n* Address the"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Ask a customer to confirm their address.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -3.489267110824585,
+      "casual_completion_mean_logprob": -3.0470943450927734,
+      "formal_preference_margin": -0.4421727657318115,
+      "generation": "Here's an example of a casual friendly customer asking a customer to confirm their address:\n\n**Customer:** Hi, I'm looking for a new laptop. Can you tell me my address?\n\n**Customer:** Yes, I'm"
+    },
+    {
+      "prompt": "Answer in a formal professional style. Confirm a restaurant reservation for two people.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -2.0275607109069824,
+      "casual_completion_mean_logprob": -3.8093008995056152,
+      "formal_preference_margin": 1.7817401885986328,
+      "generation": "Here is a formal professional style guide on how to confirm a restaurant reservation for two people:\n\n**Confirmation Process**\n\n**Step 1: Verify the Restaurant's Information**\n\n* Check the restaurant's website"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Confirm a restaurant reservation for two people.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -2.265474557876587,
+      "casual_completion_mean_logprob": -3.6470112800598145,
+      "formal_preference_margin": 1.3815367221832275,
+      "generation": "Here's a casual friendly way to confirm a restaurant reservation for two people:\n\n**Step 1: Check the Restaurant's Website**\n\n* Go to the restaurant's website ([www.yourwebsite.com](http://"
+    }
+  ],
+  "restored": [
+    {
+      "prompt": "Answer in a formal professional style. Ask to reschedule a job interview.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -2.4602291584014893,
+      "casual_completion_mean_logprob": -3.684208393096924,
+      "formal_preference_margin": 1.2239792346954346,
+      "generation": "Here is a formal professional style guide for a job interview:\n\n**Introduction**\n\n* Welcome to the interview!\n* Thank you for coming in today.\n* I'm excited to discuss your qualifications and fit for the role"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Ask to reschedule a job interview.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -2.6212785243988037,
+      "casual_completion_mean_logprob": -3.5575664043426514,
+      "formal_preference_margin": 0.9362878799438477,
+      "generation": "Here's an example of a casual friendly job interview:\n\n**Job Title:** Marketing Manager\n\n**Job Summary:**\n\nWe're seeking a highly motivated and detail-oriented Marketing Manager to join our team. The ideal candidate will"
+    },
+    {
+      "prompt": "Answer in a formal professional style. Acknowledge receipt of a software bug report.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -3.2260961532592773,
+      "casual_completion_mean_logprob": -3.9766359329223633,
+      "formal_preference_margin": 0.7505397796630859,
+      "generation": "Here is a formal professional style for a software bug report:\n\n**Date:** [Date]\n\n**Date:** [Date]\n\n**Date:** [Date]\n\n**Date:** [Date]\n\n**Date"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Acknowledge receipt of a software bug report.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -3.2127509117126465,
+      "casual_completion_mean_logprob": -3.79813814163208,
+      "formal_preference_margin": 0.5853872299194336,
+      "generation": "Here's an example of how to respond to a software bug report:\n\n**Initial Response**\n\n\"Hello! I'm [Your Name], a software engineer at [Your Company]. I'm here to report a software bug that"
+    },
+    {
+      "prompt": "Answer in a formal professional style. Request a copy of an invoice.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -2.9495882987976074,
+      "casual_completion_mean_logprob": -1.67971932888031,
+      "formal_preference_margin": -1.2698689699172974,
+      "generation": "Here is a formal request for a copy of an invoice:\n\n**Form A-1: Invoice**\n\n**Date:** [Insert Date]\n\n**Signature:** ______________________________________________________\n**Date:** [Insert Date"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Request a copy of an invoice.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -2.7371346950531006,
+      "casual_completion_mean_logprob": -1.4884592294692993,
+      "formal_preference_margin": -1.2486754655838013,
+      "generation": "Here's a sample response:\n\n**Introduction**\n\nI'm excited to share my recent purchase with you. I've been eyeing your receipt for a while now, and I wanted to take a moment to thank you for your"
+    },
+    {
+      "prompt": "Answer in a formal professional style. Congratulate a colleague on a promotion.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -1.8760141134262085,
+      "casual_completion_mean_logprob": -2.406094551086426,
+      "formal_preference_margin": 0.5300804376602173,
+      "generation": "Here is a formal professional style response:\n\n**Title:** Congratulations on your promotion!\n\n**Introduction:**\nThank you for your hard work and dedication. I am honored to have been part of your team and to be a part"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Congratulate a colleague on a promotion.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -1.9505500793457031,
+      "casual_completion_mean_logprob": -2.1505610942840576,
+      "formal_preference_margin": 0.2000110149383545,
+      "generation": "Here's a casual friendly way to congratulate a colleague on a promotion:\n\n**Greeting and Introduction**\n\n\"Good morning/afternoon everyone, and welcome to today's meeting! I'm so glad we could finally"
+    },
+    {
+      "prompt": "Answer in a formal professional style. Ask a customer to confirm their address.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -3.5378386974334717,
+      "casual_completion_mean_logprob": -3.2235608100891113,
+      "formal_preference_margin": -0.31427788734436035,
+      "generation": "Here is a formal professional style guide on how to ask for a customer's address:\n\n**General Guidelines**\n\n* Use a formal greeting, such as \"Hello, my name is [Your Name].\"\n* Address the"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Ask a customer to confirm their address.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -3.496953010559082,
+      "casual_completion_mean_logprob": -3.0605368614196777,
+      "formal_preference_margin": -0.4364161491394043,
+      "generation": "Here's an example of a casual friendly customer asking a customer to confirm their address:\n\n**Customer:** Hi, I'm looking for a new laptop. Can you tell me my address?\n\n**Customer:** Yes, I'm"
+    },
+    {
+      "prompt": "Answer in a formal professional style. Confirm a restaurant reservation for two people.",
+      "formal_instruction": true,
+      "formal_completion_mean_logprob": -2.0268402099609375,
+      "casual_completion_mean_logprob": -3.817702293395996,
+      "formal_preference_margin": 1.7908620834350586,
+      "generation": "Here is a formal professional style guide on how to confirm a restaurant reservation for two people:\n\n**Confirmation Process**\n\n**Step 1: Verify the Restaurant's Information**\n\n* Check the restaurant's website"
+    },
+    {
+      "prompt": "Answer in a casual friendly style. Confirm a restaurant reservation for two people.",
+      "formal_instruction": false,
+      "formal_completion_mean_logprob": -2.26208233833313,
+      "casual_completion_mean_logprob": -3.671654224395752,
+      "formal_preference_margin": 1.409571886062622,
+      "generation": "Here's a casual friendly way to confirm a restaurant reservation for two people:\n\n**Step 1: Check the Restaurant's Website**\n\n* Go to the restaurant's website ([www.yourwebsite.com](http://"
+    }
+  ],
+  "style_metric": "mean-token teacher-forced logp(formal completion) minus logp(casual completion); diagnostic, not a style classifier",
+  "metrics": {
+    "mean_formal_margin_before": 0.34645675619443256,
+    "mean_formal_margin_after": 0.34226226806640625,
+    "instruction_sensitivity_before": 0.21085804700851438,
+    "instruction_sensitivity_after": 0.22222081820170084,
+    "changed_generations": 3
+  },
+  "max_new_tokens": 48,
+  "undo_weights_outputs_exact": true,
+  "edit_reports": [
+    {
+      "index": 0,
+      "op": "PROJECT_OUT",
+      "target": "model.layers.9.mlp.down_proj.weight",
+      "delta_norm": 6.544447545060576,
+      "changed_elements": 884723
+    }
+  ],
+  "corpus": null,
+  "baseline_perplexity": null,
+  "projected_perplexity": null
+}

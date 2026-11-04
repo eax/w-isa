@@ -1,0 +1,11 @@
+include README.md LICENSE CONTRIBUTING.md SECURITY.md
+recursive-include src/wisa *.py
+recursive-include tests *.py
+recursive-include examples *.py *.json
+prune artifacts
+prune data
+prune .venv
+prune .release-check
+prune .release-dist
+prune local
+global-exclude __pycache__ *.py[cod] .DS_Store

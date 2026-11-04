@@ -1,0 +1,27 @@
+{
+  "description": "Handwritten matched topics, disjoint profile/calibration/test sets. A small diagnostic fixture, not a standard style benchmark.",
+  "positive_prefix": "Answer in a formal professional style. ",
+  "negative_prefix": "Answer in a casual friendly style. ",
+  "profile": [
+    {"question": "Invite a colleague to a meeting tomorrow.", "formal": "You are cordially invited to attend our meeting tomorrow.", "casual": "Hey, come join our meeting tomorrow!"},
+    {"question": "Ask for two more days to finish a report.", "formal": "I would appreciate a two-day extension to complete the report.", "casual": "Could I get two more days to finish the report?"},
+    {"question": "Tell a customer their package will arrive late.", "formal": "We regret to inform you that delivery of your package has been delayed.", "casual": "Sorry, your package is running a bit late!"},
+    {"question": "Thank someone for reviewing your document.", "formal": "Thank you for taking the time to review my document.", "casual": "Thanks a bunch for checking out my document!"},
+    {"question": "Politely decline an invitation to dinner.", "formal": "Thank you for the invitation; unfortunately, I am unable to attend.", "casual": "Thanks for inviting me, but I can't make it this time!"}
+  ],
+  "calibration": [
+    {"question": "Remind someone about an appointment on Friday.", "formal": "This is a reminder of your scheduled appointment on Friday.", "casual": "Just a heads-up about your appointment on Friday!"},
+    {"question": "Suggest working together on a project.", "formal": "I would welcome the opportunity to collaborate on this project.", "casual": "Want to team up on this project?"},
+    {"question": "Welcome a new colleague to the team.", "formal": "We are pleased to welcome you to our team.", "casual": "Great to have you on the team!"},
+    {"question": "Ask someone for feedback on your presentation.", "formal": "I would appreciate your feedback regarding my presentation.", "casual": "What did you think of my presentation?"},
+    {"question": "Apologize for missing a phone call.", "formal": "Please accept my apologies for missing your telephone call.", "casual": "Sorry I missed your call!"}
+  ],
+  "test": [
+    {"question": "Ask to reschedule a job interview.", "formal": "I would like to request an alternative time for the interview.", "casual": "Could we move the interview to another time?"},
+    {"question": "Acknowledge receipt of a software bug report.", "formal": "Thank you for your report; our team will investigate the issue.", "casual": "Thanks for flagging the bug! We'll take a look."},
+    {"question": "Request a copy of an invoice.", "formal": "Would you kindly provide a copy of the invoice?", "casual": "Can you send me a copy of the invoice?"},
+    {"question": "Congratulate a colleague on a promotion.", "formal": "Please accept my sincere congratulations on your well-deserved promotion.", "casual": "Congrats on the promotion! You totally earned it!"},
+    {"question": "Ask a customer to confirm their address.", "formal": "Please confirm your current mailing address at your earliest convenience.", "casual": "Could you double-check your address for us?"},
+    {"question": "Confirm a restaurant reservation for two people.", "formal": "We are pleased to confirm your reservation for two guests.", "casual": "You're all set! Your table for two is booked."}
+  ]
+}

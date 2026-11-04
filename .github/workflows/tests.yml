@@ -1,0 +1,42 @@
+name: Offline CPU tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install build tools and CPU PyTorch
+        run: |
+          python -m pip install --upgrade pip build
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Build and install wheel
+        run: |
+          python -m build
+          python -m pip install dist/*.whl
+          python -m pip check
+      - name: Test installed package without model downloads
+        env:
+          HF_HUB_OFFLINE: '1'
+          TRANSFORMERS_OFFLINE: '1'
+          HF_HUB_DISABLE_TELEMETRY: '1'
+        run: |
+          python -c "import wisa; print(wisa.__file__)"
+          wisa demo
+          python -m unittest discover -s tests -v
