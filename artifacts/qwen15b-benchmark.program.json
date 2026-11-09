@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "instructions": [
+    {
+      "op": "RANK1",
+      "target": "model.layers.9.mlp.down_proj.weight",
+      "left": "u",
+      "right": "v",
+      "alpha": 0.1
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "description": "Disjoint handwritten reasoning topics for development, admission, and final evaluation. Each answer is scored by its final-answer line.",
+  "development": [
+    {"case_id": "dev-add", "prompt": "What is 17 + 25? Think briefly and finish with exactly: Final answer: <number>", "expected_answer": "42"},
+    {"case_id": "dev-sequence", "prompt": "The sequence is 2, 4, 8, 16. What is the next number? Think briefly and finish with exactly: Final answer: <number>", "expected_answer": "32"},
+    {"case_id": "dev-boxes", "prompt": "There are 3 boxes with 4 pencils in each box. How many pencils are there? Think briefly and finish with exactly: Final answer: <number>", "expected_answer": "12"}
+  ],
+  "validation": [
+    {"case_id": "val-subtract", "prompt": "A library has 48 books and lends out 19. How many remain? Think briefly and finish with exactly: Final answer: <number>", "expected_answer": "29"},
+    {"case_id": "val-double", "prompt": "A number is doubled to give 26. What was the original number? Think briefly and finish with exactly: Final answer: <number>", "expected_answer": "13"},
+    {"case_id": "val-coins", "prompt": "You have 5 coins worth 2 dollars each. How many dollars do you have? Think briefly and finish with exactly: Final answer: <number>", "expected_answer": "10"}
+  ],
+  "test": [
+    {"case_id": "test-divide", "prompt": "Twenty-one oranges are shared equally among three people. How many does each person receive? Think briefly and finish with exactly: Final answer: <number>", "expected_answer": "7"},
+    {"case_id": "test-time", "prompt": "A walk takes 15 minutes each way. How many minutes does the round trip take? Think briefly and finish with exactly: Final answer: <number>", "expected_answer": "30"},
+    {"case_id": "test-count", "prompt": "A shelf contains 6 red books and 8 blue books. How many books are on the shelf? Think briefly and finish with exactly: Final answer: <number>", "expected_answer": "14"}
+  ]
+}

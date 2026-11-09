@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420">
+<rect width="1000" height="420" fill="white"/>
+<g font-family="Arial,sans-serif" font-size="13" fill="#20262e">
+<text x="65" y="28" font-size="17">Request time (s)</text>
+<line x1="65" y1="320.00" x2="460" y2="320.00" stroke="#e3e7eb"/>
+<text x="56" y="324.00" text-anchor="end">0.00</text>
+<line x1="65" y1="268.00" x2="460" y2="268.00" stroke="#e3e7eb"/>
+<text x="56" y="272.00" text-anchor="end">4.52</text>
+<line x1="65" y1="216.00" x2="460" y2="216.00" stroke="#e3e7eb"/>
+<text x="56" y="220.00" text-anchor="end">9.04</text>
+<line x1="65" y1="164.00" x2="460" y2="164.00" stroke="#e3e7eb"/>
+<text x="56" y="168.00" text-anchor="end">13.56</text>
+<line x1="65" y1="112.00" x2="460" y2="112.00" stroke="#e3e7eb"/>
+<text x="56" y="116.00" text-anchor="end">18.08</text>
+<line x1="65" y1="60.00" x2="460" y2="60.00" stroke="#e3e7eb"/>
+<text x="56" y="64.00" text-anchor="end">22.60</text>
+<text x="65.00" y="343" text-anchor="middle">32</text>
+<text x="144.00" y="343" text-anchor="middle">128</text>
+<text x="460.00" y="343" text-anchor="middle">512</text>
+<polyline points="65.00,306.36 144.00,265.42 460.00,104.73" fill="none" stroke="#59636e" stroke-width="2"/>
+<line x1="65.0" x2="65.0" y1="306.4364739624882" y2="306.28813974060677" stroke="#59636e" stroke-width="3"/>
+<circle cx="65.0" cy="306.35781150418376" r="4" fill="#59636e"/>
+<line x1="144.0" x2="144.0" y1="267.07161017499897" y2="265.1426421879354" stroke="#59636e" stroke-width="3"/>
+<circle cx="144.0" cy="265.4169862821237" r="4" fill="#59636e"/>
+<line x1="460.0" x2="460.0" y1="105.9625502611074" y2="98.32221921792964" stroke="#59636e" stroke-width="3"/>
+<circle cx="460.0" cy="104.73309875276371" r="4" fill="#59636e"/>
+<polyline points="65.00,305.84 144.00,264.17 460.00,97.12" fill="none" stroke="#1769aa" stroke-width="2"/>
+<line x1="65.0" x2="65.0" y1="305.8893954228049" y2="305.8059945812993" stroke="#1769aa" stroke-width="3"/>
+<circle cx="65.0" cy="305.8353946211674" r="4" fill="#1769aa"/>
+<line x1="144.0" x2="144.0" y1="265.3127873608167" y2="264.0097573707787" stroke="#1769aa" stroke-width="3"/>
+<circle cx="144.0" cy="264.1727482289307" r="4" fill="#1769aa"/>
+<line x1="460.0" x2="460.0" y1="100.37774977871771" y2="95.56697083740144" stroke="#1769aa" stroke-width="3"/>
+<circle cx="460.0" cy="97.11895656817288" r="4" fill="#1769aa"/>
+<polyline points="65.00,306.35 144.00,264.92 460.00,95.71" fill="none" stroke="#d46b08" stroke-width="2"/>
+<line x1="65.0" x2="65.0" y1="306.4390801992762" y2="306.2989797984225" stroke="#d46b08" stroke-width="3"/>
+<circle cx="65.0" cy="306.34665413343436" r="4" fill="#d46b08"/>
+<line x1="144.0" x2="144.0" y1="265.9992616546579" y2="264.9200387555793" stroke="#d46b08" stroke-width="3"/>
+<circle cx="144.0" cy="264.924810205883" r="4" fill="#d46b08"/>
+<line x1="460.0" x2="460.0" y1="98.4083753727393" y2="94.69054889593244" stroke="#d46b08" stroke-width="3"/>
+<circle cx="460.0" cy="95.7088558626798" r="4" fill="#d46b08"/>
+<text x="262.5" y="369" text-anchor="middle">Generated tokens</text>
+<text x="565" y="28" font-size="17">Decode time (ms/token)</text>
+<line x1="565" y1="320.00" x2="960" y2="320.00" stroke="#e3e7eb"/>
+<text x="556" y="324.00" text-anchor="end">0.00</text>
+<line x1="565" y1="268.00" x2="960" y2="268.00" stroke="#e3e7eb"/>
+<text x="556" y="272.00" text-anchor="end">8.80</text>
+<line x1="565" y1="216.00" x2="960" y2="216.00" stroke="#e3e7eb"/>
+<text x="556" y="220.00" text-anchor="end">17.60</text>
+<line x1="565" y1="164.00" x2="960" y2="164.00" stroke="#e3e7eb"/>
+<text x="556" y="168.00" text-anchor="end">26.40</text>
+<line x1="565" y1="112.00" x2="960" y2="112.00" stroke="#e3e7eb"/>
+<text x="556" y="116.00" text-anchor="end">35.20</text>
+<line x1="565" y1="60.00" x2="960" y2="60.00" stroke="#e3e7eb"/>
+<text x="556" y="64.00" text-anchor="end">44.00</text>
+<text x="565.00" y="343" text-anchor="middle">32</text>
+<text x="644.00" y="343" text-anchor="middle">128</text>
+<text x="960.00" y="343" text-anchor="middle">512</text>
+<polyline points="565.00,103.85 644.00,101.71 960.00,104.23" fill="none" stroke="#59636e" stroke-width="2"/>
+<line x1="565.0" x2="565.0" y1="104.91419789045392" y2="102.47051089701631" stroke="#59636e" stroke-width="3"/>
+<circle cx="565.0" cy="103.85388130824632" r="4" fill="#59636e"/>
+<line x1="644.0" x2="644.0" y1="108.3139679926056" y2="100.52652486714646" stroke="#59636e" stroke-width="3"/>
+<circle cx="644.0" cy="101.71101646463177" r="4" fill="#59636e"/>
+<line x1="960.0" x2="960.0" y1="105.4689830538695" y2="97.81553853478326" stroke="#59636e" stroke-width="3"/>
+<circle cx="960.0" cy="104.22912915983332" r="4" fill="#59636e"/>
+<polyline points="565.00,104.76 644.00,101.99 960.00,97.94" fill="none" stroke="#1769aa" stroke-width="2"/>
+<line x1="565.0" x2="565.0" y1="105.64482836033656" y2="104.1926771072709" stroke="#1769aa" stroke-width="3"/>
+<circle cx="565.0" cy="104.75678884192124" r="4" fill="#1769aa"/>
+<line x1="644.0" x2="644.0" y1="104.01934620610962" y2="101.65761555152372" stroke="#1769aa" stroke-width="3"/>
+<circle cx="644.0" cy="101.99031021070658" r="4" fill="#1769aa"/>
+<line x1="960.0" x2="960.0" y1="101.18125244528068" y2="96.45010199029812" stroke="#1769aa" stroke-width="3"/>
+<circle cx="960.0" cy="97.94395332562496" r="4" fill="#1769aa"/>
+<polyline points="565.00,103.57 644.00,99.78 960.00,95.16" fill="none" stroke="#d46b08" stroke-width="2"/>
+<line x1="565.0" x2="565.0" y1="105.09043801857209" y2="102.7522410728485" stroke="#d46b08" stroke-width="3"/>
+<circle cx="565.0" cy="103.57352526336797" r="4" fill="#d46b08"/>
+<line x1="644.0" x2="644.0" y1="104.0798872650675" y2="99.65939289432905" stroke="#d46b08" stroke-width="3"/>
+<circle cx="644.0" cy="99.77854985365099" r="4" fill="#d46b08"/>
+<line x1="960.0" x2="960.0" y1="97.90360826269267" y2="94.14406915707261" stroke="#d46b08" stroke-width="3"/>
+<circle cx="960.0" cy="95.16382868086737" r="4" fill="#d46b08"/>
+<text x="762.5" y="369" text-anchor="middle">Generated tokens</text>
+<text x="360" y="405" fill="#59636e" font-size="13">baseline</text>
+<text x="470" y="405" fill="#1769aa" font-size="13">wisa</text>
+<text x="580" y="405" fill="#d46b08" font-size="13">hook</text>
+</g></svg>

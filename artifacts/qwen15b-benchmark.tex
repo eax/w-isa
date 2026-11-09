@@ -1,0 +1,24 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.8cm},width=7.5cm,height=6cm,xlabel={Generated tokens},xtick={32,128,512},grid=major,legend columns=3,legend style={font=\footnotesize,at={(0.5,-0.32)},anchor=north},tick label style={font=\small}]
+\nextgroupplot[ylabel={Request time (s)},ymin=0]
+\addplot+[color=gray,mark=*,error bars/.cd,y dir=both,y explicit] coordinates {(32,1.185821000) += (0,0.006056084) -= (0,0.006837583) (128,4.744523500) += (0,0.023846833) -= (0,0.143825000) (512,18.711661416) += (0,0.557253375) -= (0,0.106867708)};
+\addlegendentry{baseline}
+\addplot+[color=blue,mark=*,error bars/.cd,y dir=both,y explicit] coordinates {(32,1.231231083) += (0,0.002555542) -= (0,0.004693916) (128,4.852676500) += (0,0.014167667) -= (0,0.099095709) (512,19.373506083) += (0,0.134903375) -= (0,0.283264333)};
+\addlegendentry{wisa}
+\addplot+[color=orange,mark=*,error bars/.cd,y dir=both,y explicit] coordinates {(32,1.186790833) += (0,0.004144000) -= (0,0.008033958) (128,4.787304959) += (0,0.000414749) -= (0,0.093394626) (512,19.496076375) += (0,0.088514375) -= (0,0.234650542)};
+\addlegendentry{hook}
+\nextgroupplot[ylabel={Decode time (ms/token)},ymin=0]
+\addplot+[color=gray,mark=*,error bars/.cd,y dir=both,y explicit] coordinates {(32,36.578573932) += (0,0.234108839) -= (0,0.179438191) (128,36.941212598) += (0,0.200452424) -= (0,1.117422566) (512,36.515070450) += (0,1.085376875) -= (0,0.209821428)};
+\addlegendentry{baseline}
+\addplot+[color=blue,mark=*,error bars/.cd,y dir=both,y explicit] coordinates {(32,36.425774196) += (0,0.095465063) -= (0,0.150283611) (128,36.893947503) += (0,0.056302173) -= (0,0.343375322) (512,37.578715591) += (0,0.252805611) -= (0,0.547850620)};
+\addlegendentry{wisa}
+\addplot+[color=orange,mark=*,error bars/.cd,y dir=both,y explicit] coordinates {(32,36.626018802) += (0,0.138986555) -= (0,0.256708312) (128,37.268245409) += (0,0.020165024) -= (0,0.727918639) (512,38.049198223) += (0,0.172574689) -= (0,0.463655006)};
+\addlegendentry{hook}
+\end{groupplot}
+\end{tikzpicture}
+\end{document}

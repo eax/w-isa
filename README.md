@@ -15,6 +15,24 @@ checkpoint path or another Transformers causal LM, including
 `HuggingFaceTB/SmolLM-135M-Instruct`. Parameter names and dimensions come from the
 loaded model.
 
+## Research context and attribution
+
+We credit **Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab** for the
+weight-space programming perspective presented in
+[*Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights*](https://rikiyat.github.io/blog/weight-space-programming/)
+(November 2, 2026). Their article explores LLM-native weight inspection and editing.
+W-ISA develops a structured instruction runtime with validation, request scopes
+and restoration around weight interventions.
+
+Related foundations include Elhage et al.'s
+[*A Mathematical Framework for Transformer Circuits*](https://transformer-circuits.pub/2021/framework/index.html)
+for head and residual-stream structure, and Arditi et al.'s
+[*Refusal in Language Models Is Mediated by a Single Direction*](https://arxiv.org/abs/2406.11717)
+for directional behavioral interventions. Both are referenced in the article above.
+The article also links [*Tracr: Compiled Transformers as a Laboratory for Interpretability*](https://arxiv.org/abs/2301.05062),
+which compiles programs into transformer models. W-ISA compiles intervention
+instructions for the parameters of an existing model.
+
 ## Run it
 
 From a checkout, create a virtual environment and install the package:
@@ -187,9 +205,9 @@ The tests use `unittest`, fixed matrices, and a tiny randomly initialized
 breakpoint in the runtime and launch the `wisa` module with the `demo` argument
 using the workspace virtual environment.
 
-The November 3, 2026 run used ARM64 macOS, Python 3.12.9, PyTorch 2.15.0,
-Transformers 5.22.1 and NumPy 2.5.4: **62 passed; 6 CUDA hardware cases skipped
-by device discovery**. Coverage includes independent NumPy/hand-derived
+The November 4, 2026 run used ARM64 macOS, Python 3.12.9, PyTorch 2.15.0,
+Transformers 5.22.1 and NumPy 2.5.4: **66 tests passed** in the CPU/MPS environment.
+Coverage includes independent NumPy/hand-derived
 answers, extreme direction scales, rounding, rollback after partial execution,
 tied parameters, repeated execution, MPS operands, all opcodes on CPU/MPS, and
 Qwen logit changes with exact undo/replay. Seven additional slice tests cover
@@ -242,6 +260,60 @@ See the [measured results](artifacts/roundtrip-report.md),
 [independent process report](artifacts/smol-roundtrip-repeat.json).
 The runner also saves raw FP32 logits, the measured FP64 operand, and the exact
 JSON program, together with the model revision and execution environment.
+
+## Qwen2.5-1.5B execution comparison
+
+The [rank-one benchmark](examples/intervention_benchmark.py) compares original
+inference, scoped W-ISA materialization, and a PyTorch forward hook computing
+the equivalent linear update. The recorded run uses FP32 MPS weights, layer 9's
+1536×8960 MLP down-projection, and normalized sine/cosine vectors with strength
+0.1. A 51-token prompt is decoded for fixed 32-, 128-, and 512-token budgets,
+including EOS. Each mode/length has one warm-up and five timed requests; mode
+order rotates between repetitions and every token step is synchronized.
+
+Reproduce the two Qwen experiments with the cached checkpoint:
+
+```sh
+HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 .venv/bin/python examples/roundtrip.py \
+	--model Qwen/Qwen2.5-1.5B-Instruct --device mps --max-new-tokens 48 \
+	--local-files-only --output artifacts/qwen15b-roundtrip.json
+HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 .venv/bin/python examples/intervention_benchmark.py \
+	--model Qwen/Qwen2.5-1.5B-Instruct --device mps --dtype float32 \
+	--lengths 32 128 512 --warmups 1 --repeats 5 --local-files-only \
+	--output artifacts/qwen15b-benchmark.json
+```
+
+For an initial model download, omit the offline environment settings and
+`--local-files-only`. The benchmark accepts caller-selected model, module,
+device, dtype, prompt, intervention strength and token budgets.
+
+| Generated tokens | Original request (s) | W-ISA request (s) | Hook request (s) |
+| --- | ---: | ---: | ---: |
+| 32 | 1.1858 | 1.2312 | 1.1868 |
+| 128 | 4.7445 | 4.8527 | 4.7873 |
+| 512 | 18.7117 | 19.3735 | 19.4961 |
+
+Values are medians of five complete requests, including setup and restoration.
+The [graph](artifacts/qwen15b-benchmark.svg) shows medians and interquartile
+ranges. All three modes returned identical token sequences at every measured
+length. Hook versus materialized prompt logits differed by at most 0.000184;
+the materialized weights matched the rounded NumPy reference exactly. The
+intervention changed baseline prompt logits by up to 0.041107.
+
+One target snapshot occupies 52.5 MiB and one full FP64 buffer occupies 105 MiB.
+The maximum sampled RSS increase during a W-ISA request was 498.94 MiB, with
+10 ms sampling. RSS and MPS allocator counters are recorded separately because
+they overlap in unified-memory accounting. The [raw JSON](artifacts/qwen15b-benchmark.json)
+retains all 45 requests, setup/restore times, TTFT, decode times and memory counters.
+The [CSV](artifacts/qwen15b-benchmark.csv) tabulates the timing measurements.
+The runner exports SVG and
+[PGFPlots source](artifacts/qwen15b-benchmark.tex); the [compiled figure](artifacts/qwen15b-benchmark.pdf)
+is also included.
+
+The separate [head/projection roundtrip](artifacts/qwen15b-roundtrip.json)
+changed all four prompt-logit distributions and three generated sequences.
+Projection residual was $2.52421\times10^{-8}$ relative to its original response.
+Undo and replay checks matched the recorded weights, logits and token sequences.
 
 ## Evaluation, profiles, and match-action
 
