@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "Please cite the paper for the component you use. The W-ISA paper is the preferred citation; the NCP paper is listed in references."
+type: software
+title: "W-ISA: Weight-Space Instruction Runtime"
+authors:
+  - family-names: Aksoy
+    given-names: Ekrem
+license: MIT
+repository-code: "https://github.com/eax/w-isa"
+url: "https://github.com/eax/w-isa"
+preferred-citation:
+  type: article
+  title: "W-ISA: Transactional Execution of Weight-Space Intervention Programs"
+  authors:
+    - family-names: Aksoy
+      given-names: Ekrem
+  year: 2026
+  journal: arXiv
+  doi: "10.48550/arXiv.2611.13232"
+  url: "https://arxiv.org/abs/2611.13232"
+references:
+  - type: article
+    title: "NCP: Verifier-Guided Optimization of Weight-Space Control Policies"
+    authors:
+      - family-names: Aksoy
+        given-names: Ekrem
+    year: 2026
+    journal: arXiv
+    doi: "10.48550/arXiv.2611.13236"
+    url: "https://arxiv.org/abs/2611.13236"

@@ -15,6 +15,48 @@ checkpoint path or another Transformers causal LM, including
 `HuggingFaceTB/SmolLM-135M-Instruct`. Parameter names and dimensions come from the
 loaded model.
 
+## Papers and citation
+
+Both papers are by Ekrem Aksoy and are available on arXiv:
+
+| Paper | Read | DOI |
+| --- | --- | --- |
+| W-ISA: Transactional Execution of Weight-Space Intervention Programs | [arXiv:2611.13232](https://arxiv.org/abs/2611.13232) · [PDF](https://arxiv.org/pdf/2611.13232) | [10.48550/arXiv.2611.13232](https://doi.org/10.48550/arXiv.2611.13232) |
+| NCP: Verifier-Guided Optimization of Weight-Space Control Policies | [arXiv:2611.13236](https://arxiv.org/abs/2611.13236) · [PDF](https://arxiv.org/pdf/2611.13236) | [10.48550/arXiv.2611.13236](https://doi.org/10.48550/arXiv.2611.13236) |
+
+W-ISA provides the intervention runtime; [NCP](NCP/README.md) adds candidate
+synthesis, verification and rule admission. Cite the paper for the component
+used in your work. [CITATION.cff](CITATION.cff) provides machine-readable metadata;
+GitHub's **Cite this repository** entry uses the W-ISA paper as its preferred citation.
+
+```bibtex
+@misc{aksoy2026wisa,
+	title = {{W-ISA}: Transactional Execution of Weight-Space Intervention Programs},
+	author = {Ekrem Aksoy},
+	year = {2026},
+	eprint = {2611.13232},
+	archivePrefix = {arXiv},
+	primaryClass = {cs.AI},
+	doi = {10.48550/arXiv.2611.13232},
+	url = {https://arxiv.org/abs/2611.13232}
+}
+
+@misc{aksoy2026ncp,
+	title = {{NCP}: Verifier-Guided Optimization of Weight-Space Control Policies},
+	author = {Ekrem Aksoy},
+	year = {2026},
+	eprint = {2611.13236},
+	archivePrefix = {arXiv},
+	primaryClass = {cs.AI},
+	doi = {10.48550/arXiv.2611.13236},
+	url = {https://arxiv.org/abs/2611.13236}
+}
+```
+
+The software uses the [MIT License](LICENSE). Both papers use
+[CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/);
+the paper license does not change the software license.
+
 ## Research context and attribution
 
 We credit **Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab** for the

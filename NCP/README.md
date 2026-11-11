@@ -10,6 +10,33 @@ candidate set contains an MLP projection, an attention-head scale, and their
 ordered combination. The model, layers, heads, scale factors, match threshold
 and admission budgets are configurable.
 
+## Paper and citation
+
+Ekrem Aksoy. **NCP: Verifier-Guided Optimization of Weight-Space Control Policies**
+(2026). [arXiv:2611.13236](https://arxiv.org/abs/2611.13236) ·
+[PDF](https://arxiv.org/pdf/2611.13236) ·
+[DOI: 10.48550/arXiv.2611.13236](https://doi.org/10.48550/arXiv.2611.13236).
+
+The execution layer is described in the companion
+[W-ISA paper](https://arxiv.org/abs/2611.13232).
+
+```bibtex
+@misc{aksoy2026ncp,
+	title = {{NCP}: Verifier-Guided Optimization of Weight-Space Control Policies},
+	author = {Ekrem Aksoy},
+	year = {2026},
+	eprint = {2611.13236},
+	archivePrefix = {arXiv},
+	primaryClass = {cs.AI},
+	doi = {10.48550/arXiv.2611.13236},
+	url = {https://arxiv.org/abs/2611.13236}
+}
+```
+
+Machine-readable metadata for both papers is in [CITATION.cff](../CITATION.cff).
+The paper uses [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+The implementation remains [MIT-licensed](../LICENSE).
+
 ## Research context and attribution
 
 We credit **Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab** and their
